@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+	<f:view>
+		<p:outputPanel id="outputPanelMail">
+			<h:form>
+				<p:panel header="Envio de e-mail" style="width: 550px">
+					<p:messages />
+					<h:panelGrid columns="2">
+						<h:outputText value="Para: " />
+						<h:inputText value="#{index.mensagem.destino}" size="66" />
+						<h:outputText value="Título: " />
+						<h:inputText value="#{index.mensagem.titulo}" size="66" />
+						<h:outputText value="Mensagem: " />
+						<p:editor value="#{index.mensagem.mensagem}" widgetVar="editor" width="830"/>
+					</h:panelGrid>
+					<p:commandButton value="Enviar e-mail" image="ui-icon-mail-closed"
+						action="#{index.enviaEmail}" update="outputPanelMail" />
+					<p:commandButton value="Limpar campos" image="ui-icon-circle-close"
+						action="#{index.limpaCampos}" update="outputPanelMail" />
+				</p:panel>
+			</h:form>
+		</p:outputPanel>
+	</f:view>
+</body>
+</html>
