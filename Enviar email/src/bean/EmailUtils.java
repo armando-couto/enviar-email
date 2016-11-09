@@ -10,9 +10,9 @@ import org.apache.commons.mail.SimpleEmail;
 public class EmailUtils {
 
 	private static final String HOSTNAME = "smtp.gmail.com";
-	private static final String USERNAME = "coutoarmando@gmail.com";
-	private static final String PASSWORD = "40886702408867-x";
-	private static final String EMAILORIGEM = "coutoarmando@gmail.com";
+	private static final String USERNAME = "xxxx@gmail.com";
+	private static final String PASSWORD = "xxxxxx";
+	private static final String EMAILORIGEM = "xxxx@gmail.com";
 
 	public static Email conectaEmail() throws EmailException {
 		Email email = new SimpleEmail();
@@ -33,6 +33,6 @@ public class EmailUtils {
 		email.setMsg(mensagem.getMensagem());
 		email.addTo(mensagem.getDestino());
 		String resposta = email.send();
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "E-mail enviado com sucesso para: " + mensagem.getDestino(), "Informação"));
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "E-mail enviado com sucesso para: " + mensagem.getDestino(), "InformaÃ§Ã£o"));
 	}
 }
